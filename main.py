@@ -4,7 +4,6 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Minha API de Tarefas")
 
-app = FastAPI()
 
 # Libera o seu frontend para acessar a API Python
 app.add_middleware(
