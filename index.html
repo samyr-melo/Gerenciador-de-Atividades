@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Lista de Tarefas</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Lista de Tarefas</h1>
+        
+        <div class="input-group">
+            <input type="text" id="nova-tarefa-input" placeholder="Digite uma nova tarefa...">
+            <button onclick="adicionarTarefaDoInput()">Adicionar</button>
+        </div>
+
+        <ul id="lista-tarefas-container">
+            <!-- As tarefas inseridas dinamicamente pelo JavaScript entrarão aqui -->
+        </ul>
+    </div>
+</body>
+<script src="carregar_dados.js"></script>
+<script src="cache.js"></script>
+</html>

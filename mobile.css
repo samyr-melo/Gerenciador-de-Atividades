@@ -1,0 +1,175 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS (Mobile-First)
+   ========================================== */
+:root {
+    --bg-color: #f4f6f9;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --success: #10b981;
+    --danger: #ef4444;
+    --danger-hover: #dc2626;
+    --border: #e5e7eb;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 16px; /* Espaçamento menor nas bordas do celular */
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    background: var(--card-bg);
+    padding: 20px; /* Reduzido para aproveitar mais a tela do celular */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ==========================================
+   FORMULÁRIO DE ENTRADA
+   ========================================== */
+.input-group {
+    display: flex;
+    flex-direction: column; /* No celular, input e botão ficam empilhados */
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 14px; /* Área de toque maior para o dedo */
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 16px; /* Evita que o iOS dê zoom automático no input */
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary);
+}
+
+button {
+    padding: 14px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    -webkit-tap-highlight-color: transparent; /* Remove o flash azul ao tocar no celular */
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* ==========================================
+   LISTA DE TAREFAS
+   ========================================== */
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+    flex-direction: column; /* Empilha o texto e os botões no celular */
+    gap: 12px;
+    padding: 16px;
+    background: var(--bg-color);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border);
+}
+
+.tarefa-texto {
+    font-weight: 500;
+    font-size: 16px;
+    word-break: break-word; /* Evita que textos longos quebrem o layout */
+}
+
+.concluida .tarefa-texto {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+/* Container dos botões da linha */
+.acoes-group {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+}
+
+.acoes-group button {
+    flex: 1; /* Faz os botões dividirem o espaço igualmente no celular */
+    padding: 10px;
+    font-size: 14px;
+}
+
+.btn-concluir {
+    background-color: var(--success);
+}
+
+.btn-remover {
+    background-color: var(--danger);
+}
+
+.btn-remover:hover {
+    background-color: var(--danger-hover);
+}
+
+/* ==========================================
+   TELA GRANDE (Ajustes para Computador/Tablet)
+   ========================================== */
+@media (min-width: 480px) {
+    body {
+        padding: 40px 20px;
+    }
+
+    .container {
+        max-width: 500px;
+        padding: 30px;
+    }
+
+    .input-group {
+        flex-direction: row; /* Volta a ficar lado a lado */
+    }
+
+    input[type="text"] {
+        flex: 1;
+    }
+
+    button {
+        padding: 12px 20px;
+        width: auto;
+    }
+
+    li {
+        flex-direction: row; /* Volta a ficar lado a lado */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .acoes-group {
+        width: auto; /* Botões não ocupam mais a tela toda */
+    }
+}
