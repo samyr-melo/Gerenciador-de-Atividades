@@ -1,5 +1,5 @@
 // Ajuste a URL caso sua porta do FastAPI/Flask seja diferente
-const API_URL = "http://127.0.0.1:8000/tarefas";
+const API_URL = "https://gerenciador-de-atividades.onrender.com/tarefas";
 
 // 1. CARREGAR DADOS (LocalStorage -> Backend)
 async function carregarTarefas() {
