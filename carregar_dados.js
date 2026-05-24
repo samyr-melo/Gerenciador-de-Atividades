@@ -1,5 +1,5 @@
 // 1. CONSTANTE ÚNICA DA API
-const API_URL = "https://gerenciador-de-atividades.onrender.com/tarefas";
+const API_URL = "https://gerenciador-de-atividades-1.onrender.com/tarefas";
 
 // 2. CARREGAR DADOS (LocalStorage -> Backend)
 async function carregarTarefas() {
